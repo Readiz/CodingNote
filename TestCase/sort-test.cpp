@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <time.h>
-#include <algorithm>
+#ifndef INCLUDED_ALL
+    #define INCLUDED_ALL
+    #include <bits/stdc++.h>
+#endif
 
 namespace bubble {
     #include "../sort-bubble.cpp"

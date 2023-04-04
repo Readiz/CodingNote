@@ -1,10 +1,20 @@
-#include <stdio.h>
-
-#include "sort-test.cpp"
+#ifndef INCLUDED_ALL
+    #define INCLUDED_ALL
+    #include <bits/stdc++.h>
+#endif
+namespace sorttest {
+    #include "sort-test.cpp"
+}
+namespace darraytest {
+    #include "darray-test.cpp"
+}
 
 int main() {
     printf("----------------------- SORT TEST -----------------------\n");
-    sort_test();
+    sorttest::sort_test();
+    printf("\n");
+    printf("------------------- DYNAMIC ARRAY TEST ------------------\n");
+    darraytest::darray_test();
     printf("---------------------------------------------------------\n");
     return 0;
 }
