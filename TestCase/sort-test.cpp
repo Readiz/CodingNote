@@ -35,7 +35,11 @@ void sort_test() {
     for(register int i = 0; i < size; ++i) {
         ans[i] = originalData[i] = rand_int_30bit();
     }
+
+    s = clock();
     std::sort(ans, ans + size);
+    e = clock();
+    printf("STD::SORT - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // BUBBLE SORT TEST
     for(register int i = 0; i < size; ++i) {
