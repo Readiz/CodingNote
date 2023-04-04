@@ -16,9 +16,10 @@ jobs:
     - name: build
       run: cd TestCase && g++ -O0 test-all.cpp -o testall
     - name: run
-      run: mkdir output
-           ./TestCase/testall > ./output/result.log
-           cat ./output/result.log
+      run: |
+        mkdir output
+        ./TestCase/testall > ./output/result.log
+        cat ./output/result.log
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
       with:
