@@ -10,7 +10,7 @@
         <pre id="result"></pre>
         <script>
             (async() => {
-                const res = await fetch('./result.log');
+                const res = await fetch('./output/result.log');
                 const text = await res.text();
                 document.getElementById('result').innerHTML = text;
             })();
