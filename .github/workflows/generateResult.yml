@@ -22,6 +22,14 @@ jobs:
       run: |
         ./TestCase/testall > ./output/result.log
         cat ./output/result.log
+        ./TestCase/testall > ./output/result2.log
+        cat ./output/result2.log
+        ./TestCase/testall > ./output/result3.log
+        cat ./output/result3.log
+        ./TestCase/testall > ./output/result4.log
+        cat ./output/result4.log
+        ./TestCase/testall > ./output/result5.log
+        cat ./output/result5.log
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
       with:
