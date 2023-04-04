@@ -8,4 +8,7 @@
 
 (ex: sort-quick)
 
-Written By Readiz
+
+## Showcase
+
+https://www.readiz.com/CodingNote/
