@@ -16,4 +16,4 @@ jobs:
     - name: build
       run: cd TestCase && g++ -O0 test-all.cpp -o testall
     - name: run
-      run: ./testall
+      run: ./TestCase/testall
