@@ -1,8 +1,8 @@
 #ifndef INCLUDED_ALL
     #define INCLUDED_ALL
     #include <bits/stdc++.h>
+    #include "../Util/rand.cpp"
 #endif
-#include "../Util/rand.cpp"
 
 namespace mvector {
     #include "../darray-vector.cpp"
@@ -20,6 +20,9 @@ int mData[size];
 void darray_test() {
     clock_t s, e;
     bool testValidationResult;
+
+    printf("TEST SIZE: %d\n", size);
+    printf("\n", size);
 
     for(register int i = 0; i < size; ++i) {
         ans[i] = originalData[i] = rand_int_30bit();

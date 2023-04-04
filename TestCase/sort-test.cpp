@@ -1,6 +1,7 @@
 #ifndef INCLUDED_ALL
     #define INCLUDED_ALL
     #include <bits/stdc++.h>
+    #include "../Util/rand.cpp"
 #endif
 
 namespace bubble {
@@ -21,7 +22,6 @@ namespace merge {
 namespace bucket {
     #include "../sort-bucket.cpp"
 }
-#include "../Util/rand.cpp"
 
 constexpr int size = 50000;
 int originalData[size];
@@ -32,6 +32,9 @@ int mData[size];
 void sort_test() {
     clock_t s, e;
     bool testValidationResult;
+
+    printf("TEST SIZE: %d\n", size);
+    printf("\n", size);
 
     for(register int i = 0; i < size; ++i) {
         ans[i] = originalData[i] = rand_int_30bit();

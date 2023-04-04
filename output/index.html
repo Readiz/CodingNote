@@ -8,11 +8,22 @@
             Showcase for performance & working test
         </h1>
         <pre id="result"></pre>
+        <button onclick="updateResult('result')">Result 1</button>
+        <button onclick="updateResult('result2')">Result 2</button>
+        <button onclick="updateResult('result3')">Result 3</button>
+        <button onclick="updateResult('result4')">Result 4</button>
+        <button onclick="updateResult('result5')">Result 5</button>
         <script>
-            (async() => {
-                const res = await fetch('./result.log');
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            async function updateResult(filename) {
+                const res = await fetch(`./${filename}.log?` + getRandomArbitrary(0, 1000000));
                 const text = await res.text();
                 document.getElementById('result').innerHTML = text;
+            }
+            (async() => {
+                await updateResult('result');
             })();
         </script>
     </body>
