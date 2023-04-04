@@ -4,11 +4,14 @@
         <title>Show case</title>
     </head>
     <body>
+        <h1>
+            Showcase for performance & working test
+        </h1>
         <pre id="result"></pre>
         <script>
             (async() => {
                 const res = await fetch('./result.log');
-                const text = res.text();
+                const text = await res.text();
                 document.getElementById('result').innerHTML = text;
             })();
         </script>
