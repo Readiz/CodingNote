@@ -1,0 +1,8 @@
+----------------------- SORT TEST -----------------------
+BUBBLE SORT VALIDATION RESULT - PASS! - Time: 9475 ms
+INSERTION SORT VALIDATION RESULT - PASS! - Time: 5453 ms
+INSERTION2 SORT VALIDATION RESULT - PASS! - Time: 1039 ms
+QUICK SORT VALIDATION RESULT - PASS! - Time: 6 ms
+MERGE SORT VALIDATION RESULT - PASS! - Time: 7 ms
+BUCKET SORT VALIDATION RESULT - PASS! - Time: 2 ms
+---------------------------------------------------------
