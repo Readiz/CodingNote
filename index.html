@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show case</title>
+    </head>
+    <body>
+        <pre id="result"></pre>
+        <script>
+            (async() => {
+                const res = await fetch('./result.log');
+                const text = res.text();
+                document.getElementById('result').innerHTML = text;
+            })();
+        </script>
+    </body>
+</html>
