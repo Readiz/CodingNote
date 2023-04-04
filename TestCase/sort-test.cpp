@@ -28,7 +28,7 @@ int ans[size];
 int mData[size];
 
 // 테스트의 시작
-int main() {
+void sort_test() {
     clock_t s, e;
     bool testValidationResult;
 
@@ -127,7 +127,6 @@ int main() {
     }
     if (testValidationResult) printf("MERGE SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
-    
     // BUCKET SORT TEST
     for(register int i = 0; i < size; ++i) {
         mData[i] = originalData[i];
