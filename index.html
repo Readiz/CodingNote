@@ -33,11 +33,17 @@
                 const text = await res.text();
                 document.getElementById('result').innerHTML = text;
             }
+            async function getSourceFile(filename) {
+                const res = await fetch(`${filename}?` + getRandomArbitrary(0, 1000000));
+                const text = await res.text();
+                document.getElementById('sourcePanel').innerHTML = text;
+            }
             async function getSources() {
                 const res = await fetch(`./output/sourceFileList.json?` + getRandomArbitrary(0, 1000000));
                 const arr = await res.json();
-                for (const item of json) {
-                    const button = `<button>${item}</button>`;
+                for (const item of arr) {
+                    const name = String(item).substr(2).split('.cpp')[0];
+                    const button = `<button onclick="getSourceFile('${item}')">${name}</button>`;
                     document.getElementById('sources').innerHTML += button;
                 }
             }
