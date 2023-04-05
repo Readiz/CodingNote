@@ -35,8 +35,11 @@
             }
             async function getSources() {
                 const res = await fetch(`./output/sourceFileList.json?` + getRandomArbitrary(0, 1000000));
-                const text = await res.text();
-                document.getElementById('sources').innerHTML = text;
+                const arr = await res.json();
+                for (const item of json) {
+                    const button = `<button>${item}</button>`;
+                    document.getElementById('sources').innerHTML += button;
+                }
             }
             (async() => {
                 await updateResult('result');
