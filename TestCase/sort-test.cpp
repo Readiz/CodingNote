@@ -1,26 +1,22 @@
-#ifndef INCLUDED_ALL
-    #define INCLUDED_ALL
-    #include <bits/stdc++.h>
-    #include "../Util/rand.cpp"
-#endif
+#include "../Util/rheader.cpp"
 
 namespace bubble {
-    #include "../sort-bubble.cpp"
+    #include "../Logic/sort-bubble.cpp"
 }
 namespace insertion {
-    #include "../sort-insertion.cpp"
+    #include "../Logic/sort-insertion.cpp"
 }
 namespace insertion2 {
-    #include "../sort-insertion2.cpp"
+    #include "../Logic/sort-insertion2.cpp"
 }
 namespace quick {
-    #include "../sort-quick.cpp"
+    #include "../Logic/sort-quick.cpp"
 }
 namespace merge {
-    #include "../sort-merge.cpp"
+    #include "../Logic/sort-merge.cpp"
 }
 namespace bucket {
-    #include "../sort-bucket.cpp"
+    #include "../Logic/sort-bucket.cpp"
 }
 
 constexpr int size = 50000;

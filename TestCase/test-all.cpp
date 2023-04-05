@@ -1,8 +1,5 @@
-#ifndef INCLUDED_ALL
-    #define INCLUDED_ALL
-    #include <bits/stdc++.h>
-    #include "../Util/rand.cpp"
-#endif
+#include "../Util/rheader.cpp"
+
 namespace sorttest {
     #include "sort-test.cpp"
 }

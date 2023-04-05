@@ -1,14 +1,10 @@
-#ifndef INCLUDED_ALL
-    #define INCLUDED_ALL
-    #include <bits/stdc++.h>
-    #include "../Util/rand.cpp"
-#endif
+#include "../Util/rheader.cpp"
 
 namespace mvector {
-    #include "../darray-vector.cpp"
+    #include "../Logic/darray-vector.cpp"
 }
 namespace custom {
-    #include "../darray-custom.cpp"
+    #include "../Logic/darray-custom.cpp"
 }
 
 constexpr int size = 1000000;

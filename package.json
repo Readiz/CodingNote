@@ -1,0 +1,24 @@
+{
+  "name": "codingnote",
+  "version": "1.0.0",
+  "description": "코드 조각들을 모아놓는 곳입니다.",
+  "main": "generateSourceFilePath.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Readiz/CodingNote.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Readiz/CodingNote/issues"
+  },
+  "homepage": "https://github.com/Readiz/CodingNote#readme",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "glob-promise": "^6.0.2"
+  }
+}
