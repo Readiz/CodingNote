@@ -15,6 +15,9 @@ namespace quick {
 namespace merge {
     #include "../Logic/sort-merge.cpp"
 }
+namespace merge2 {
+    #include "../Logic/sort-merge2.cpp"
+}
 namespace bucket {
     #include "../Logic/sort-bucket.cpp"
 }
@@ -93,7 +96,7 @@ void sort_test() {
             break;
         }
     }
-    if (testValidationResult) printf("INSERTION2 SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+    if (testValidationResult) printf("INSERTION SORT 2 VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // QUICK SORT TEST
     for(register int i = 0; i < size; ++i) {
@@ -130,6 +133,24 @@ void sort_test() {
         }
     }
     if (testValidationResult) printf("MERGE SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+    // MERGE SORT 2 TEST
+    for(register int i = 0; i < size; ++i) {
+        mData[i] = originalData[i];
+    }
+    s = clock();
+    merge2::sort(mData, size);
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (ans[i] != mData[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %d vs RET: %d\n", i, ans[i], mData[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("MERGE SORT 2 VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // BUCKET SORT TEST
     for(register int i = 0; i < size; ++i) {

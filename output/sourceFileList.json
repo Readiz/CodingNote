@@ -7,6 +7,7 @@
   "./Logic/sort-insertion.cpp",
   "./Logic/sort-insertion2.cpp",
   "./Logic/sort-merge.cpp",
+  "./Logic/sort-merge2.cpp",
   "./Logic/sort-quick.cpp",
   "./TestCase/darray-test.cpp",
   "./TestCase/sort-test.cpp",
