@@ -22,17 +22,18 @@ namespace bucket {
     #include "../Logic/sort-bucket.cpp"
 }
 
-constexpr int size = 50000;
-int originalData[size];
-int ans[size];
-int mData[size];
+constexpr int sizemax = 1000000;
+int originalData[sizemax];
+int ans[sizemax];
+int mData[sizemax];
 
 // 테스트의 시작
 void sort_test() {
     clock_t s, e;
     bool testValidationResult;
 
-    printf("TEST SIZE: %d\n", size);
+    int size = 10000;
+    printf("N^2 logic TEST SIZE: %d\n", size);
     printf("\n", size);
 
     for(register int i = 0; i < size; ++i) {
@@ -97,6 +98,23 @@ void sort_test() {
         }
     }
     if (testValidationResult) printf("INSERTION SORT 2 VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+
+
+
+    size = 1000000;
+    printf("\n-\n");
+    printf("ADVANCED TEST SIZE: %d\n", size);
+    printf("\n");
+
+    for(register int i = 0; i < size; ++i) {
+        ans[i] = originalData[i] = rand_int_30bit();
+    }
+
+    s = clock();
+    std::sort(ans, ans + size);
+    e = clock();
+    printf("STD::SORT - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // QUICK SORT TEST
     for(register int i = 0; i < size; ++i) {
@@ -169,4 +187,5 @@ void sort_test() {
         }
     }
     if (testValidationResult) printf("BUCKET SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
 }

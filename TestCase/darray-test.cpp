@@ -18,7 +18,7 @@ void darray_test() {
     bool testValidationResult;
 
     printf("TEST SIZE: %d\n", size);
-    printf("\n", size);
+    printf("\n");
 
     for(register int i = 0; i < size; ++i) {
         ans[i] = originalData[i] = rand_int_30bit();

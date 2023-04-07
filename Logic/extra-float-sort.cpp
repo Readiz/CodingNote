@@ -1,8 +1,4 @@
-#ifndef INCLUDED_ALL
-    #define INCLUDED_ALL
-    #include <bits/stdc++.h>
-    #include "./Util/rand.cpp"
-#endif
+#include "../Util/rheader.cpp"
 
 float getRndFloat() {
     return (float)((rand() % 20000) - 10000 + (rand() % 10000) / 10000.0);

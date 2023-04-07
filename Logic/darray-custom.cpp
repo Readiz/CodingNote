@@ -1,8 +1,4 @@
-#ifndef INCLUDED_ALL
-    #define INCLUDED_ALL
-    #include <bits/stdc++.h>
-    #include "../Util/rand.cpp"
-#endif
+#include "../Util/rheader.cpp"
 
 struct DArray {
     int *d;
