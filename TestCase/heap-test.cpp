@@ -9,6 +9,9 @@ namespace naive {
 namespace fast {
     #include "../Logic/heap-fast.cpp"
 }
+namespace moderate {
+    #include "../Logic/heap-moderate.cpp"
+}
 constexpr int size = 1000000;
 int originalData[size];
 int ans[size];
@@ -74,6 +77,26 @@ void heap_test() {
         }
     }
     if (testValidationResult) printf("NAIVE PQ VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+    // MOD PQ TEST
+    s = clock();
+    for(register int i = 0; i < size; ++i) {
+        moderate::insert(originalData[i]);
+    }
+    for(register int i = 0; i < size; ++i) {
+        mData[i] = moderate::getMin();
+    }
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (ans[i] != mData[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %d vs RET: %d\n", i, ans[i], mData[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("MODERATE PQ VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // FAST PQ TEST
     s = clock();
