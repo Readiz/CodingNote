@@ -226,7 +226,7 @@ void sort_test() {
             break;
         }
     }
-    if (testValidationResult) printf("STD SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+    if (testValidationResult) printf("NORMAL FLOAT SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // BIT SORT TEST
     for(register int i = 0; i < size; ++i) {
@@ -244,7 +244,7 @@ void sort_test() {
             break;
         }
     }
-    if (testValidationResult) printf("CAST SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+    if (testValidationResult) printf("CAST FLOAT SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
 
 }
