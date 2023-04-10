@@ -21,11 +21,20 @@ namespace merge2 {
 namespace bucket {
     #include "../Logic/sort-bucket.cpp"
 }
+namespace float_quick {
+    #include "../Logic/sort-float-quick.cpp"
+}
+namespace float_cast {
+    #include "../Logic/sort-float-cast.cpp"
+}
 
 constexpr int sizemax = 1000000;
 int originalData[sizemax];
 int ans[sizemax];
 int mData[sizemax];
+float fOriginalData[sizemax];
+float fdata[sizemax];
+float fans[sizemax];
 
 // 테스트의 시작
 void sort_test() {
@@ -187,5 +196,55 @@ void sort_test() {
         }
     }
     if (testValidationResult) printf("BUCKET SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+
+
+    size = 1000000;
+    printf("\n-\n");
+    printf("FLOAT TEST SIZE: %d\n", size);
+    printf("\n");
+
+    for(register int i = 0; i < size; ++i) {
+        fans[i] = fOriginalData[i] = rand_float();
+    }
+
+    std::sort(fans, fans + size);
+
+    // STD SORT TEST
+    for(register int i = 0; i < size; ++i) {
+        fdata[i] = fOriginalData[i];
+    }
+    s = clock();
+    float_quick::sort(fdata, size);
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (fans[i] != fdata[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %f vs RET: %f\n", i, fans[i], fdata[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("STD SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+    // BIT SORT TEST
+    for(register int i = 0; i < size; ++i) {
+        fdata[i] = fOriginalData[i];
+    }
+    s = clock();
+    float_cast::sort(fdata, size);
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (fans[i] != fdata[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %f vs RET: %f\n", i, fans[i], fdata[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("CAST SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
 
 }
