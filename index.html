@@ -10,8 +10,8 @@
             padding: 20px;
             }
         </style>
-        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/default.min.css">
-        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     </head>
     <body>
         <h1>
@@ -29,8 +29,10 @@
         <div id="sources">
 
         </div>
-        <pre class="code" id="sourcePanel">
-
+        <pre>
+            <code id="sourcePanel">
+            
+            </code>
         </pre>
         <br><br>
         <hr>
@@ -51,8 +53,7 @@
                 const res = await fetch(`${filename}?` + getRandomArbitrary(0, 1000000));
                 const text = mescape(await res.text());
                 document.getElementById('sourcePanel').innerHTML = text;
-                
-                document.querySelectorAll('pre.code').forEach(el => {
+                document.querySelectorAll('pre code').forEach(el => {
                     // then highlight each
                     hljs.highlightElement(el);
                 });
