@@ -31,12 +31,12 @@
             }
             async function updateResult(filename) {
                 const res = await fetch(`./output/${filename}.log?` + getRandomArbitrary(0, 1000000));
-                const text = await res.text();
+                const text = escape(await res.text());
                 document.getElementById('result').innerHTML = text;
             }
             async function getSourceFile(filename) {
                 const res = await fetch(`${filename}?` + getRandomArbitrary(0, 1000000));
-                const text = await res.text();
+                const text = escape(await res.text());
                 document.getElementById('sourcePanel').innerHTML = text;
             }
             async function getSources() {
