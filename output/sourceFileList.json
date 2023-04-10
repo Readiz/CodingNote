@@ -2,6 +2,7 @@
   "./Logic/darray-custom.cpp",
   "./Logic/darray-vector.cpp",
   "./Logic/extra-float-sort.cpp",
+  "./Logic/heap-fast.cpp",
   "./Logic/heap-naive.cpp",
   "./Logic/heap-stl-pq.cpp",
   "./Logic/sort-bubble.cpp",

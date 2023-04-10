@@ -6,6 +6,9 @@ namespace stl_pq {
 namespace naive {
     #include "../Logic/heap-naive.cpp"
 }
+namespace fast {
+    #include "../Logic/heap-fast.cpp"
+}
 constexpr int size = 200000;
 int originalData[size];
 int ans[size];
@@ -52,7 +55,7 @@ void heap_test() {
     }
     if (testValidationResult) printf("STL PQ VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
-    // STL PQ TEST
+    // NAIVE PQ TEST
     s = clock();
     for(register int i = 0; i < size; ++i) {
         naive::insert(originalData[i]);
@@ -71,5 +74,26 @@ void heap_test() {
         }
     }
     if (testValidationResult) printf("NAIVE PQ VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+    // FAST PQ TEST
+    s = clock();
+    for(register int i = 0; i < size; ++i) {
+        fast::insert(originalData[i]);
+    }
+    for(register int i = 0; i < size; ++i) {
+        mData[i] = fast::getMin();
+    }
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (ans[i] != mData[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %d vs RET: %d\n", i, ans[i], mData[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("FAST PQ VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
 
 }
