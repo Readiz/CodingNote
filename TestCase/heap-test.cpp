@@ -9,7 +9,7 @@ namespace naive {
 namespace fast {
     #include "../Logic/heap-fast.cpp"
 }
-constexpr int size = 200000;
+constexpr int size = 1000000;
 int originalData[size];
 int ans[size];
 int mData[size];
