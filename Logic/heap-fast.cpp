@@ -1,5 +1,5 @@
 // Min Heap
-constexpr int MAX = 200010;
+constexpr int MAX = 1000010;
 
 int data[MAX];
 int sz = 0;
