@@ -26,17 +26,20 @@
         <hr>
         Go to <a href="https://github.com/Readiz/CodingNote">GitHub Repo</a>
         <script>
+            function mescape(v) {
+                return v.split('<').join('&lt;').split('>').join('&gt;');
+            }
             function getRandomArbitrary(min, max) {
                 return Math.random() * (max - min) + min;
             }
             async function updateResult(filename) {
                 const res = await fetch(`./output/${filename}.log?` + getRandomArbitrary(0, 1000000));
-                const text = escape(await res.text());
+                const text = mescape(await res.text());
                 document.getElementById('result').innerHTML = text;
             }
             async function getSourceFile(filename) {
                 const res = await fetch(`${filename}?` + getRandomArbitrary(0, 1000000));
-                const text = escape(await res.text());
+                const text = mescape(await res.text());
                 document.getElementById('sourcePanel').innerHTML = text;
             }
             async function getSources() {
