@@ -18,15 +18,15 @@ void insert(int val) {
 
 int getMin() {
     register int c = 2;
-    register int nd = data[sz];
+    register int val = data[sz];
     register int r = data[1];
     data[sz--] = data[1];
 
     // Heapify Down
-    for(; c <= sz && data[c += (c < sz && data[c | 1] < data[c])] < nd; c <<= 1) {
+    for(; c <= sz && data[c |= (c < sz && data[c | 1] < data[c])] < val; c <<= 1) {
         data[c >> 1] = data[c];
     }
-    data[c >> 1] = nd;
+    data[c >> 1] = val;
 
     return r;
 }
