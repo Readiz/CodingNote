@@ -1,20 +1,28 @@
 constexpr int MAX = 1000010;
-unsigned int ref[MAX];
-unsigned int* mdata;
+long long ref[MAX];
+float* mdata;
+
 void qSort(int s, int e) {
     if (s >= e) return;
     register int l = s;
     register int r = e;
-    register unsigned int pivot = ref[(s+e)>>1]; // must be copied.
+    register long long pivot = ref[(s+e)>>1]; // must be copied.
+    register float tmp;
+    register long long ltmp;
 
     while (l < r) {
         while(ref[l] < pivot) ++l;
         while(pivot < ref[r]) --r;
         if (l > r) break;
-        if (ref[l] != ref[r]) {
-            mdata[l] ^= mdata[r] ^= mdata[l] ^= mdata[r];
-            ref[l] ^= ref[r] ^= ref[l] ^= ref[r];
-        }
+
+        ltmp = ref[l];
+        ref[l] = ref[r];
+        ref[r] = ltmp;
+
+        tmp = mdata[l];
+        mdata[l] = mdata[r];
+        mdata[r] = tmp;
+
         ++l; --r;
     }
     
@@ -23,17 +31,7 @@ void qSort(int s, int e) {
 }
 
 void sort(float data[], int size) {
-    mdata = (unsigned int*) data;
-    register int i;
-    register unsigned int mask;
-
-    // 값 변경: 양수 -> 0x80000000 을 붙임 = 더 크게
-    //          음수 -> 양수로 변경
-    for(i = 0; i < size; ++i) {
-        mask = (int)mdata[i] >> 31;
-        // 음수 | 양수
-        ref[i] = (mask & -(int)mdata[i]) | (~mask & (mdata[i] | 0x80000000));
-    }
-
+    mdata = data;
+    for(register int i = 0; i < size; ++i) ref[i] = (double)data[i] * 100000;
     qSort(0, size - 1);
 }
