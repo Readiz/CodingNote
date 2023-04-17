@@ -5,6 +5,7 @@
   "./Logic/heap-moderate.cpp",
   "./Logic/heap-naive.cpp",
   "./Logic/heap-stl-pq.cpp",
+  "./Logic/heap-stl-set.cpp",
   "./Logic/sort-bubble.cpp",
   "./Logic/sort-bucket.cpp",
   "./Logic/sort-float-cast.cpp",
