@@ -27,6 +27,9 @@ namespace float_quick {
 namespace float_cast {
     #include "../Logic/sort-float-cast.cpp"
 }
+namespace float_hack {
+    #include "../Logic/sort-float-hack.cpp"
+}
 
 constexpr int sizemax = 1000000;
 int originalData[sizemax];
@@ -228,7 +231,7 @@ void sort_test() {
     }
     if (testValidationResult) printf("NORMAL FLOAT SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
-    // BIT SORT TEST
+    // CAST SORT TEST
     for(register int i = 0; i < size; ++i) {
         fdata[i] = fOriginalData[i];
     }
@@ -245,6 +248,24 @@ void sort_test() {
         }
     }
     if (testValidationResult) printf("CAST FLOAT SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+    // BIT SORT TEST
+    for(register int i = 0; i < size; ++i) {
+        fdata[i] = fOriginalData[i];
+    }
+    s = clock();
+    float_hack::sort(fdata, size);
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (fans[i] != fdata[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %f vs RET: %f\n", i, fans[i], fdata[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("HACK FLOAT SORT VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
 
 }

@@ -9,6 +9,7 @@
   "./Logic/sort-bubble.cpp",
   "./Logic/sort-bucket.cpp",
   "./Logic/sort-float-cast.cpp",
+  "./Logic/sort-float-hack.cpp",
   "./Logic/sort-float-quick.cpp",
   "./Logic/sort-insertion.cpp",
   "./Logic/sort-insertion2.cpp",
