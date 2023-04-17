@@ -1,6 +1,6 @@
 #include "../Util/rheader.cpp"
 // Min Heap
-std::set<int> pq;
+std::multiset<int> pq;
 
 void insert(int val) {
     pq.insert(val);
