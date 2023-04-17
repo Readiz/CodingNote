@@ -3,6 +3,9 @@
 namespace stl_pq {
     #include "../Logic/heap-stl-pq.cpp"
 }
+namespace stl_set {
+    #include "../Logic/heap-stl-set.cpp"
+}
 namespace naive {
     #include "../Logic/heap-naive.cpp"
 }
@@ -57,6 +60,26 @@ void heap_test() {
         }
     }
     if (testValidationResult) printf("STL PQ VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
+
+    // STL PQ TEST
+    s = clock();
+    for(register int i = 0; i < size; ++i) {
+        stl_set::insert(originalData[i]);
+    }
+    for(register int i = 0; i < size; ++i) {
+        mData[i] = stl_set::getMin();
+    }
+    e = clock();
+    // Validation
+    testValidationResult = true;
+    for(register int i = 0; i < size; ++i) {
+        if (ans[i] != mData[i]) {
+            testValidationResult = false;
+            printf("%d - ANS: %d vs RET: %d\n", i, ans[i], mData[i]);
+            break;
+        }
+    }
+    if (testValidationResult) printf("STL SET VALIDATION RESULT - PASS! - Time: %d ms\n", (e - s) * 1000 / CLOCKS_PER_SEC);
 
     // NAIVE PQ TEST
     s = clock();
