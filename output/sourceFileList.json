@@ -6,6 +6,8 @@
   "./Logic/heap-naive.cpp",
   "./Logic/heap-stl-pq.cpp",
   "./Logic/heap-stl-set.cpp",
+  "./Logic/sieve-legacy.cpp",
+  "./Logic/sieve-linear.cpp",
   "./Logic/sort-bubble.cpp",
   "./Logic/sort-bucket.cpp",
   "./Logic/sort-float-cast.cpp",
@@ -18,8 +20,10 @@
   "./Logic/sort-quick.cpp",
   "./TestCase/darray-test.cpp",
   "./TestCase/heap-test.cpp",
+  "./TestCase/sieve-test.cpp",
   "./TestCase/sort-test.cpp",
   "./TestCase/test-all.cpp",
   "./Util/rand.cpp",
-  "./Util/rheader.cpp"
+  "./Util/rheader.cpp",
+  "./Util/rmath.cpp"
 ]
