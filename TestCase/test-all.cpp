@@ -9,6 +9,9 @@ namespace heaptest {
 namespace sorttest {
     #include "sort-test.cpp"
 }
+namespace sievetest {
+    #include "sieve-test.cpp"
+}
 
 int main() {
     printf("------------------- DYNAMIC ARRAY TEST ------------------\n");
@@ -19,6 +22,10 @@ int main() {
     printf("\n");
     printf("----------------------- SORT TEST -----------------------\n");
     sorttest::sort_test();
+    printf("\n");
+    printf("---------------------- SIEVE TEST -----------------------\n");
+    sievetest::sieve_test();
+    printf("\n");
     printf("---------------------------------------------------------\n");
     return 0;
 }
