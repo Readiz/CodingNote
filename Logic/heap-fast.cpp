@@ -16,9 +16,8 @@ void insert(int val) {
 
 int getMin() {
     register int c = 2;
-    register int val = data[sz];
+    register int val = data[sz--];
     register int r = data[1];
-    data[sz--] = data[1];
 
     // Heapify Down
     // 적어도 왼쪽 자식을 포함하고 &&
