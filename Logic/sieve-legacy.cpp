@@ -9,15 +9,10 @@ std::vector<int> getPrimes(int MAX) {
 
     for(register int i = 2; i * i <= MAX; ++i) {
         if (isNotPrime[i] == 0) {
+            primes.push_back(i);
             for(register int j = i * i; j <= MAX; j += i) {
                 isNotPrime[j] = 1;
             }
-        }
-    }
-
-    for(register int i = 2; i <= MAX; ++i) {
-        if (isNotPrime[i] == 0) {
-            primes.push_back(i);
         }
     }
 
