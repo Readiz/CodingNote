@@ -6,14 +6,18 @@ std::vector<int> getPrimes(int MAX) {
 
     // 1 ~ MAX까지의 소수의 수를 구한다.
     // 결과는 prime 배열에 저장됨
-
-    for(register int i = 2; i * i <= MAX; ++i) {
+    register int i;
+    for(i = 2; i * i <= MAX; ++i) {
         if (isNotPrime[i] == 0) {
             primes.push_back(i);
             for(register int j = i * i; j <= MAX; j += i) {
                 isNotPrime[j] = 1;
             }
         }
+    }
+    for(; i <= MAX; ++i) {
+        if (isNotPrime[i] == 0)
+            primes.push_back(i);
     }
 
     return primes;
